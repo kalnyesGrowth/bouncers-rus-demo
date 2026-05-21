@@ -476,6 +476,28 @@
       .area-grid { grid-template-columns: 1fr 1fr; }
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { width: 100%; justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-deliver { flex-direction: column; }
+    }
+
+    /* ===== OUR STORY ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 52px; }
+    .about-img-wrap { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); position: relative; }
+    .about-img-wrap img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .about-img-badge { position: absolute; bottom: 20px; left: 20px; background: var(--primary); color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: .85rem; padding: 8px 18px; border-radius: 50px; }
+    .about-content h2 { margin-bottom: 0; }
+    .about-content h2 span { color: var(--primary); }
+    .about-body { font-size: .95rem; color: var(--muted); line-height: 1.75; margin-top: 18px; }
+    .about-body + .about-body { margin-top: 12px; }
+    .about-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .about-chip { display: flex; align-items: center; gap: 6px; background: var(--primary-light); color: var(--primary); font-size: .8rem; font-weight: 700; padding: 7px 14px; border-radius: 50px; }
+    .about-deliver { display: flex; align-items: center; gap: 16px; margin-top: 24px; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; box-shadow: var(--shadow); }
+    .about-deliver img { width: 90px; height: 64px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+    .about-deliver-text strong { display: block; font-size: .9rem; color: var(--dark); margin-bottom: 4px; }
+    .about-deliver-text p { font-size: .84rem; color: var(--muted); line-height: 1.5; }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .about-img-wrap img { height: 280px; }
     }
   </style>
 </head>
@@ -698,7 +720,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="mega-castle.webp" alt="Bounce castle rental San Antonio TX" loading="lazy">
+          <img src="rentals/castle-four.webp" alt="Bounce castle rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🏰</div>
@@ -710,7 +732,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="art-castle.webp" alt="Princess castle rental San Antonio TX" loading="lazy">
+          <img src="rentals/castle-two.webp" alt="Princess castle rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">👸</div>
@@ -722,7 +744,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/4005314/pexels-photo-4005314.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water slide rental San Antonio" loading="lazy">
+          <img src="setup.webp" alt="Water slide rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">💦</div>
@@ -734,7 +756,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/4005321/pexels-photo-4005321.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slip n slide rental San Antonio" loading="lazy">
+          <img src="rentals/slip-slide-new.webp" alt="Slip N Slide rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🌊</div>
@@ -746,7 +768,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/20769418/pexels-photo-20769418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cotton candy machine rental San Antonio" loading="lazy">
+          <img src="addons/cotton.webp" alt="Cotton candy machine rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🍭</div>
@@ -758,7 +780,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/7603970/pexels-photo-7603970.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Popcorn machine rental San Antonio" loading="lazy">
+          <img src="addons/popcorn.webp" alt="Popcorn machine rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🍿</div>
@@ -770,7 +792,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/1332945/pexels-photo-1332945.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Snow cone machine rental San Antonio" loading="lazy">
+          <img src="addons/cone-machine.webp" alt="Snow cone machine rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🧊</div>
@@ -782,7 +804,7 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/29188023/pexels-photo-29188023.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tables and chairs rental San Antonio" loading="lazy">
+          <img src="addons/tables-chairs.webp" alt="Tables and chairs rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🪑</div>
@@ -993,22 +1015,54 @@
     </div>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/3693218/pexels-photo-3693218.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kids party fun San Antonio" loading="lazy">
+        <img src="mega-castle-one.webp" alt="Bouncers R Us bounce castle San Antonio TX" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/1667849/pexels-photo-1667849.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Birthday party bounce house setup" loading="lazy">
+        <img src="rentals/combo-castle-slide.webp" alt="Combo bounce castle with slide rental San Antonio" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Party rental setup San Antonio" loading="lazy">
+        <img src="setup.webp" alt="Water slide rental setup San Antonio TX" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/933246/pexels-photo-933246.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kids playing at party San Antonio" loading="lazy">
+        <img src="rentals/castle-four.webp" alt="Classic bounce castle backyard party San Antonio" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Outdoor party event San Antonio" loading="lazy">
+        <img src="rentals/three-ob.webp" alt="Multiple bounce castles Bouncers R Us inventory" loading="lazy">
       </div>
       <div class="gallery-item">
-        <img src="https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Summer party fun San Antonio Texas" loading="lazy">
+        <img src="deliver.jpg" alt="Bouncers R Us delivery trailer loaded for San Antonio party" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUR STORY ===== -->
+<section class="section section-alt" id="about" aria-label="About Bouncers R Us">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="family.jpg" alt="The Bouncers R Us family — proudly serving San Antonio TX for over 20 years" loading="lazy">
+        <div class="about-img-badge">🏡 Family Owned Since 2004</div>
+      </div>
+      <div class="about-content">
+        <div class="tag">Our Story</div>
+        <h2>Family Business.<br><span>San Antonio Proud.</span></h2>
+        <p class="about-body">Bouncers R Us is a completely family-owned and operated business that has been serving San Antonio families for over 20 years. We started with a single bounce house and a pickup truck — and built our reputation one party at a time.</p>
+        <p class="about-body">We treat every event as if it were our own. That means showing up on time, setting up with care, sanitizing every piece of equipment after each rental, and making sure the kids are smiling from the moment we arrive to the moment we pack up and leave.</p>
+        <p class="about-body">We're not a big box company. We're your neighbors — and we want your party to be perfect just as much as you do.</p>
+        <div class="about-chips">
+          <div class="about-chip">✅ 20+ Years Serving SA</div>
+          <div class="about-chip">✅ Family Owned &amp; Operated</div>
+          <div class="about-chip">✅ Safety-Inspected Equipment</div>
+          <div class="about-chip">✅ Delivery Always Included</div>
+        </div>
+        <div class="about-deliver">
+          <img src="deliver.jpg" alt="Bouncers R Us delivery trailer loaded and ready to go" loading="lazy">
+          <div class="about-deliver-text">
+            <strong>We load up and come to you.</strong>
+            <p>Our trailer is packed and ready. Backyard, park, parking lot — we set up, you enjoy the party, we tear down and go.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
