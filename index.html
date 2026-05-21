@@ -211,6 +211,9 @@
     .service-price { font-family: var(--font-heading); font-size: .88rem; font-weight: 700; color: var(--primary); }
     .service-badge { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: .68rem; font-weight: 700; padding: 3px 10px; border-radius: 50px; margin-top: 6px; text-transform: uppercase; letter-spacing: .06em; }
     .service-badge.hot { background: rgba(255,49,49,.1); color: var(--red); }
+    .btn-inventory { display: inline-flex; align-items: center; gap: 6px; background: var(--primary); color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: .82rem; padding: 10px 18px; border-radius: 50px; text-decoration: none; margin-top: 14px; transition: all .22s; letter-spacing: .03em; }
+    .btn-inventory:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(140,82,255,.35); color: #fff; }
+    .btn-inventory svg { flex-shrink: 0; }
 
     /* ===== OCCASIONS ===== */
     .occasions-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 48px; }
@@ -325,6 +328,26 @@
     .review-links { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 28px; }
     .btn-google { background: #fff; color: #202124; border: 1.5px solid #ddd; }
     .btn-google:hover { background: #f8f8f8; border-color: #999; }
+    /* Inline review form */
+    .review-form-wrap { max-width: 640px; margin: 52px auto 0; background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); text-align: left; }
+    .review-form-wrap h3 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 6px; }
+    .review-form-wrap .rf-sub { font-size: .85rem; color: var(--muted); margin-bottom: 28px; }
+    .star-selector { display: flex; gap: 6px; margin-bottom: 20px; }
+    .star-selector .star-btn { font-size: 1.8rem; cursor: pointer; color: #d1d5db; transition: color .15s, transform .12s; background: none; border: none; padding: 0; line-height: 1; }
+    .star-selector .star-btn.active { color: var(--yellow); transform: scale(1.15); }
+    .rf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .rf-field { display: flex; flex-direction: column; gap: 5px; }
+    .rf-field label { font-size: .78rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .rf-field input, .rf-field select, .rf-field textarea { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: .92rem; color: var(--dark); background: #fff; transition: border-color .2s; }
+    .rf-field input:focus, .rf-field select:focus, .rf-field textarea:focus { outline: none; border-color: var(--primary); }
+    .rf-field textarea { resize: vertical; min-height: 96px; }
+    .rf-full { grid-column: 1 / -1; }
+    .rf-submit { width: 100%; padding: 15px; background: var(--primary); color: #fff; border: none; border-radius: 50px; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 8px; transition: all .22s; }
+    .rf-submit:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(140,82,255,.3); }
+    .rf-success { display: none; text-align: center; padding: 28px 0; }
+    .rf-success-icon { font-size: 3rem; margin-bottom: 10px; }
+    .rf-success h4 { font-family: var(--font-heading); font-size: 1.15rem; color: var(--green); margin-bottom: 6px; }
+    .rf-success p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
     .btn-facebook { background: #1877f2; color: #fff; }
     .btn-facebook:hover { background: #0c5fc2; }
     .btn-yelp { background: #d32323; color: #fff; }
@@ -681,8 +704,7 @@
           <div class="service-icon">🏰</div>
           <h3>Regular Bounce Castle</h3>
           <p>Classic bounce house perfect for kids of all ages. Clean, safety-inspected, and set up by us at your location.</p>
-          <div class="service-price">$125 / day</div>
-          <div class="service-badge hot">Most Popular</div>
+          <a href="inventory.html#bounce-castle" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -694,8 +716,7 @@
           <div class="service-icon">👸</div>
           <h3>Princess Castle</h3>
           <p>Themed princess bounce castle — every little girl's dream. Clean, colorful, and ready to make her day magical.</p>
-          <div class="service-price">$125 / day</div>
-          <div class="service-badge">Girls Love This!</div>
+          <a href="inventory.html#princess-castle" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -707,8 +728,7 @@
           <div class="service-icon">💦</div>
           <h3>Water Slide</h3>
           <p>Beat the Texas heat! Full-size water slide rental for summer parties. Includes delivery, setup, and pickup.</p>
-          <div class="service-price">$300 / day</div>
-          <div class="service-badge hot">Summer Favorite</div>
+          <a href="inventory.html#water-slide" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -720,8 +740,7 @@
           <div class="service-icon">🌊</div>
           <h3>Slip N Slide</h3>
           <p>Classic slip and slide fun for all ages. Perfect for backyard parties, block parties, and neighborhood events.</p>
-          <div class="service-price">$185 / day</div>
-          <div class="service-badge">All Ages Fun</div>
+          <a href="inventory.html#slip-n-slide" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -733,8 +752,7 @@
           <div class="service-icon">🍭</div>
           <h3>Cotton Candy Machine</h3>
           <p>Includes 50 cones + box of sugar. A crowd favorite at birthday parties, school fairs, and community events.</p>
-          <div class="service-price">$125 (supplies included)</div>
-          <div class="service-badge">Includes 50 Cones</div>
+          <a href="inventory.html#cotton-candy" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -746,8 +764,7 @@
           <div class="service-icon">🍿</div>
           <h3>Popcorn Machine</h3>
           <p>Includes 5 Cornell bags and 5 popcorn bags. Keeps the snacks coming all party long — a hit at every event.</p>
-          <div class="service-price">$125 (supplies included)</div>
-          <div class="service-badge">Add-On Favorite</div>
+          <a href="inventory.html#popcorn" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -759,8 +776,7 @@
           <div class="service-icon">🧊</div>
           <h3>Snow Cone Machine</h3>
           <p>Includes 1 flavor + 50 cups. Cool your guests down with refreshing snow cones — perfect for hot Texas summers.</p>
-          <div class="service-price">$125 (supplies included)</div>
-          <div class="service-badge">Includes 50 Cups</div>
+          <a href="inventory.html#snow-cone" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -772,8 +788,7 @@
           <div class="service-icon">🪑</div>
           <h3>Tables &amp; Chairs Set</h3>
           <p>6-foot table with 6 chairs per set. Delivered and picked up with your other rentals — bundle and save!</p>
-          <div class="service-price">$25 / set</div>
-          <div class="service-badge">Bundle &amp; Save</div>
+          <a href="inventory.html#tables-chairs" class="btn-inventory">Check Inventory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
       </div>
 
@@ -912,6 +927,60 @@
 
     </div>
     <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:20px">Reviews sourced from verified Yelp, Google, and Facebook listings. Individual results may vary.</p>
+
+    <!-- Inline review capture form -->
+    <div class="review-form-wrap" id="review-form-wrap">
+      <h3>Had a great time? Tell us about it! ⭐</h3>
+      <p class="rf-sub">Your feedback helps other San Antonio families find the best party rental experience — and we read every single one.</p>
+      <form id="rf-form" novalidate>
+        <div class="star-selector" id="star-selector" role="group" aria-label="Star rating">
+          <button type="button" class="star-btn" data-val="1" aria-label="1 star">★</button>
+          <button type="button" class="star-btn" data-val="2" aria-label="2 stars">★</button>
+          <button type="button" class="star-btn" data-val="3" aria-label="3 stars">★</button>
+          <button type="button" class="star-btn" data-val="4" aria-label="4 stars">★</button>
+          <button type="button" class="star-btn" data-val="5" aria-label="5 stars">★</button>
+        </div>
+        <input type="hidden" id="rf-rating" value="0">
+        <div class="rf-row">
+          <div class="rf-field">
+            <label for="rf-name">Your Name *</label>
+            <input type="text" id="rf-name" placeholder="Maria G." autocomplete="given-name">
+          </div>
+          <div class="rf-field">
+            <label for="rf-service">Equipment Rented</label>
+            <select id="rf-service">
+              <option value="">Select one…</option>
+              <option>Regular Bounce Castle</option>
+              <option>Princess Castle</option>
+              <option>Water Slide</option>
+              <option>Slip N Slide</option>
+              <option>Cotton Candy Machine</option>
+              <option>Popcorn Machine</option>
+              <option>Snow Cone Machine</option>
+              <option>Tables &amp; Chairs</option>
+              <option>Multiple Items</option>
+            </select>
+          </div>
+        </div>
+        <div class="rf-row">
+          <div class="rf-field rf-full">
+            <label for="rf-text">Your Review *</label>
+            <textarea id="rf-text" placeholder="Tell us about your experience — the kids, the party, the delivery. Every detail helps!" rows="4"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="rf-submit">Submit My Review →</button>
+      </form>
+      <div class="rf-success" id="rf-success">
+        <div class="rf-success-icon">🎉</div>
+        <h4>Thank you, we appreciate you!</h4>
+        <p>Your review has been received. Want to also share it on Google or Facebook? It only takes 30 seconds and helps other families discover us — plus you'll earn 10% off your next rental!</p>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap">
+          <a href="https://www.google.com/search?q=Bouncers+R+Us+San+Antonio+TX" target="_blank" rel="noopener" class="btn btn-sm" style="background:#fff;color:#202124;border:1.5px solid #ddd;font-size:.82rem;padding:9px 18px">⭐ Post on Google</a>
+          <a href="https://www.facebook.com/bouncersrussatx" target="_blank" rel="noopener" class="btn btn-sm" style="background:#1877f2;color:#fff;font-size:.82rem;padding:9px 18px">f Post on Facebook</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1643,6 +1712,49 @@
       if (success)  success.style.display  = 'block';
     });
   }
+
+  /* ── INLINE REVIEW FORM ── */
+  (function(){
+    var stars    = document.querySelectorAll('#star-selector .star-btn');
+    var ratingEl = document.getElementById('rf-rating');
+    var rating   = 0;
+
+    stars.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        rating = parseInt(this.getAttribute('data-val'), 10);
+        if (ratingEl) ratingEl.value = rating;
+        stars.forEach(function(s) {
+          s.classList.toggle('active', parseInt(s.getAttribute('data-val'), 10) <= rating);
+        });
+      });
+      btn.addEventListener('mouseenter', function() {
+        var hovered = parseInt(this.getAttribute('data-val'), 10);
+        stars.forEach(function(s) {
+          s.style.color = parseInt(s.getAttribute('data-val'), 10) <= hovered ? 'var(--yellow)' : '';
+        });
+      });
+      btn.addEventListener('mouseleave', function() {
+        stars.forEach(function(s) {
+          s.style.color = '';
+        });
+      });
+    });
+
+    var rfForm = document.getElementById('rf-form');
+    if (rfForm) {
+      rfForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name  = document.getElementById('rf-name').value.trim();
+        var text  = document.getElementById('rf-text').value.trim();
+        if (!name) { alert('Please enter your name.'); return; }
+        if (rating === 0) { alert('Please select a star rating.'); return; }
+        if (!text || text.length < 10) { alert('Please write a short review (at least 10 characters).'); return; }
+        rfForm.style.display = 'none';
+        var rfSuccess = document.getElementById('rf-success');
+        if (rfSuccess) rfSuccess.style.display = 'block';
+      });
+    }
+  })();
 </script>
 </body>
 </html>
