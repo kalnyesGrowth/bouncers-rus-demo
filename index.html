@@ -150,7 +150,7 @@
     .menu-cta { background: var(--red); color: #fff; padding: 14px 36px; border-radius: 50px; font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; margin-top: 8px; }
 
     /* ===== HERO ===== */
-    .hero { background: linear-gradient(135deg, #1a0533 0%, #2d0a5f 60%, #0f1f5c 100%); color: #fff; padding: 70px 0 60px; position: relative; overflow: hidden; }
+    .hero { background: linear-gradient(135deg, rgba(26,5,51,0.88) 0%, rgba(45,10,95,0.82) 50%, rgba(15,31,92,0.90) 100%), url('hero.jpg') center/cover no-repeat; color: #fff; padding: 70px 0 60px; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(140,82,255,.3) 0%, transparent 70%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(56,182,255,.2) 0%, transparent 70%); pointer-events: none; }
     .hero-inner { display: grid; grid-template-columns: 1fr 480px; gap: 56px; align-items: start; position: relative; z-index: 1; }
@@ -371,6 +371,51 @@
     .popup-form input:focus { outline: none; border-color: var(--primary); }
     .popup-submit { background: var(--red); color: #fff; border: none; width: 100%; padding: 14px; border-radius: 50px; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 4px; }
 
+    /* ===== ZIP CHECKER ===== */
+    .bw-zip-step { text-align: center; }
+    .bw-zip-input-wrap { display: flex; gap: 10px; margin-top: 14px; }
+    .bw-zip-input-wrap input { flex: 1; padding: 14px 16px; border: 2px solid var(--border); border-radius: var(--radius-sm); font-size: 1.1rem; font-family: var(--font-body); text-align: center; letter-spacing: .12em; font-weight: 700; color: var(--dark); }
+    .bw-zip-input-wrap input:focus { outline: none; border-color: var(--primary); }
+    .bw-zip-btn { background: var(--primary); color: #fff; border: none; padding: 14px 22px; border-radius: var(--radius-sm); font-family: var(--font-heading); font-weight: 700; font-size: .95rem; cursor: pointer; white-space: nowrap; }
+    .bw-zip-btn:hover { background: var(--primary-dark); }
+    .zip-eligible { background: rgba(0,191,99,.08); border: 1.5px solid rgba(0,191,99,.3); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; color: #065f46; }
+    .zip-not-eligible { background: rgba(255,49,49,.07); border: 1.5px solid rgba(255,49,49,.25); border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 14px; font-size: .9rem; color: #991b1b; }
+    .zip-not-eligible a { color: var(--red); font-weight: 700; }
+
+    /* ===== REVIEW INCENTIVE ===== */
+    .review-incentive { background: var(--dark); padding: 72px 0; }
+    .review-incentive-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .ri-steps { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+    .ri-step { display: flex; align-items: flex-start; gap: 16px; }
+    .ri-num { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ri-step-text h4 { color: #fff; font-family: var(--font-heading); font-size: .95rem; margin-bottom: 4px; }
+    .ri-step-text p { color: rgba(255,255,255,.6); font-size: .85rem; line-height: 1.55; }
+    .ri-review-links { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+    .ri-link { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 50px; font-size: .85rem; font-weight: 700; border: 1.5px solid rgba(255,255,255,.2); color: rgba(255,255,255,.88); transition: all .18s; }
+    .ri-link:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.4); }
+    .ri-form-card { background: #fff; border-radius: var(--radius); padding: 32px; }
+    .ri-form-card h3 { font-size: 1.15rem; margin-bottom: 6px; color: var(--dark); }
+    .ri-form-card .ri-sub { font-size: .85rem; color: var(--muted); margin-bottom: 22px; }
+    .ri-form { display: flex; flex-direction: column; gap: 12px; }
+    .ri-form input, .ri-form select { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: .9rem; width: 100%; }
+    .ri-form input:focus, .ri-form select:focus { outline: none; border-color: var(--primary); }
+    .ri-upload-label { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 2px dashed var(--border); border-radius: var(--radius-sm); padding: 20px; cursor: pointer; transition: all .2s; background: var(--light); text-align: center; }
+    .ri-upload-label:hover { border-color: var(--primary); background: var(--primary-light); }
+    .ri-upload-label span { font-size: .85rem; color: var(--muted); font-weight: 600; }
+    .ri-upload-label .ri-upload-icon { font-size: 2rem; }
+    .ri-upload-input { display: none; }
+    .ri-upload-filename { font-size: .82rem; color: var(--green); font-weight: 700; text-align: center; margin-top: 4px; display: none; }
+    .ri-submit { background: var(--primary); color: #fff; border: none; width: 100%; padding: 14px; border-radius: 50px; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 4px; transition: all .22s; }
+    .ri-submit:hover { background: var(--primary-dark); }
+    .ri-success { display: none; text-align: center; padding: 20px 0; }
+    .ri-success-icon { font-size: 2.5rem; margin-bottom: 10px; }
+    .ri-success h4 { color: var(--green); font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 6px; }
+    .ri-success p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .review-incentive-inner { grid-template-columns: 1fr; }
+      .bw-zip-input-wrap { flex-direction: column; }
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2,1fr); }
@@ -483,9 +528,21 @@
 
       <!-- BOOKING WIDGET -->
       <div class="booking-widget" role="form" aria-label="Quick quote form">
-        <h3>Get Your Free Quote</h3>
-        <p class="bw-sub">Fill this out — we respond within 2 hours! ⚡</p>
-        <div id="bw-fields" class="bw-fields">
+
+        <!-- STEP 1: ZIP CHECK -->
+        <div id="bw-zip-step" class="bw-zip-step">
+          <div style="font-size:2rem;margin-bottom:8px">📍</div>
+          <h3>Do We Deliver to You?</h3>
+          <p class="bw-sub" style="margin-bottom:0">Enter your ZIP code to check availability in your area.</p>
+          <div class="bw-zip-input-wrap">
+            <input type="text" id="bw-zip" placeholder="78217" maxlength="5" inputmode="numeric" pattern="[0-9]{5}" aria-label="ZIP code">
+            <button class="bw-zip-btn" id="bw-zip-check" type="button">Check ZIP →</button>
+          </div>
+          <div id="bw-zip-result"></div>
+        </div>
+
+        <!-- STEP 2: QUOTE FORM (shown after eligible ZIP) -->
+        <div id="bw-fields" class="bw-fields" style="display:none">
           <div class="bw-row">
             <div class="bw-field">
               <label for="bw-date">Event Date</label>
@@ -521,15 +578,15 @@
               <option>Bounce Castle</option>
               <option>Water Slide</option>
               <option>Combo Unit</option>
-              <option>Obstacle Course</option>
-              <option>Food Machine(s)</option>
+              <option>Food Machines</option>
               <option>Tables &amp; Chairs</option>
-              <option>Everything! (Full Package)</option>
+              <option>Full Party Package</option>
             </select>
           </div>
           <button class="bw-submit" id="bw-submit" type="button">Get My Free Quote →</button>
-          <p class="bw-note">🔒 No payment required. We'll call or text with pricing &amp; availability.</p>
+          <p class="bw-note">🔒 No payment required. We'll call or text within 2 hours.</p>
         </div>
+
         <div class="bw-success" id="bw-success">
           <div class="bw-success-icon">🎉</div>
           <h4>Quote Request Sent!</h4>
@@ -618,104 +675,104 @@
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/1046923/pexels-photo-1046923.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bounce castle rental San Antonio TX" loading="lazy">
+          <img src="mega-castle.webp" alt="Bounce castle rental San Antonio TX" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🏰</div>
-          <h3>Bounce Castles</h3>
-          <p>Classic and themed bounce houses for kids of all ages. Clean, inspected, and ready to party.</p>
-          <div class="service-price">Starting at $89</div>
+          <h3>Regular Bounce Castle</h3>
+          <p>Classic bounce house perfect for kids of all ages. Clean, safety-inspected, and set up by us at your location.</p>
+          <div class="service-price">$125 / day</div>
           <div class="service-badge hot">Most Popular</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water slide rental San Antonio" loading="lazy">
+          <img src="art-castle.webp" alt="Princess castle rental San Antonio TX" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-icon">👸</div>
+          <h3>Princess Castle</h3>
+          <p>Themed princess bounce castle — every little girl's dream. Clean, colorful, and ready to make her day magical.</p>
+          <div class="service-price">$125 / day</div>
+          <div class="service-badge">Girls Love This!</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-photo">
+          <img src="https://images.pexels.com/photos/4005314/pexels-photo-4005314.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Water slide rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">💦</div>
-          <h3>Water Slides &amp; Slip N Slides</h3>
-          <p>Beat the Texas heat! Our water slides are perfect for backyard summer parties and neighborhood events.</p>
-          <div class="service-price">Starting at $149</div>
+          <h3>Water Slide</h3>
+          <p>Beat the Texas heat! Full-size water slide rental for summer parties. Includes delivery, setup, and pickup.</p>
+          <div class="service-price">$300 / day</div>
           <div class="service-badge hot">Summer Favorite</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/3593432/pexels-photo-3593432.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dry slide shade rental San Antonio" loading="lazy">
+          <img src="https://images.pexels.com/photos/4005321/pexels-photo-4005321.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slip n slide rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
-          <div class="service-icon">⛱️</div>
-          <h3>Dry Slides with Shade</h3>
-          <p>Our shaded dry slides are perfect for events where you want the fun without the water. Great for all ages.</p>
-          <div class="service-price">Starting at $129</div>
-          <div class="service-badge">Great for All Ages</div>
+          <div class="service-icon">🌊</div>
+          <h3>Slip N Slide</h3>
+          <p>Classic slip and slide fun for all ages. Perfect for backyard parties, block parties, and neighborhood events.</p>
+          <div class="service-price">$185 / day</div>
+          <div class="service-badge">All Ages Fun</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Obstacle course bounce rental San Antonio" loading="lazy">
-        </div>
-        <div class="service-body">
-          <div class="service-icon">🏁</div>
-          <h3>Obstacle Course Castles</h3>
-          <p>Competitive and exciting — obstacle courses bring out the energy at any event. Kids (and adults) love these.</p>
-          <div class="service-price">Starting at $179</div>
-          <div class="service-badge">Crowd Pleaser</div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-photo">
-          <img src="https://images.pexels.com/photos/2531546/pexels-photo-2531546.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cotton candy machine rental San Antonio" loading="lazy">
+          <img src="https://images.pexels.com/photos/20769418/pexels-photo-20769418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cotton candy machine rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🍭</div>
           <h3>Cotton Candy Machine</h3>
-          <p>Includes 50 cones + sugar box. A crowd favorite for birthday parties, school fairs, and community events.</p>
-          <div class="service-price">Starting at $55</div>
-          <div class="service-badge">Includes Supplies</div>
+          <p>Includes 50 cones + box of sugar. A crowd favorite at birthday parties, school fairs, and community events.</p>
+          <div class="service-price">$125 (supplies included)</div>
+          <div class="service-badge">Includes 50 Cones</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/1391779/pexels-photo-1391779.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Popcorn machine rental San Antonio" loading="lazy">
+          <img src="https://images.pexels.com/photos/7603970/pexels-photo-7603970.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Popcorn machine rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🍿</div>
           <h3>Popcorn Machine</h3>
-          <p>Classic popcorn machine that keeps the snacks coming all event long. A hit at every party we've worked.</p>
-          <div class="service-price">Starting at $45</div>
+          <p>Includes 5 Cornell bags and 5 popcorn bags. Keeps the snacks coming all party long — a hit at every event.</p>
+          <div class="service-price">$125 (supplies included)</div>
           <div class="service-badge">Add-On Favorite</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Snow cone machine rental San Antonio" loading="lazy">
+          <img src="https://images.pexels.com/photos/1332945/pexels-photo-1332945.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Snow cone machine rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🧊</div>
           <h3>Snow Cone Machine</h3>
-          <p>Includes 50 cups. Cool your guests down with refreshing snow cones — perfect for hot Texas summers.</p>
-          <div class="service-price">Starting at $45</div>
-          <div class="service-badge">Includes Supplies</div>
+          <p>Includes 1 flavor + 50 cups. Cool your guests down with refreshing snow cones — perfect for hot Texas summers.</p>
+          <div class="service-price">$125 (supplies included)</div>
+          <div class="service-badge">Includes 50 Cups</div>
         </div>
       </div>
 
       <div class="service-card">
         <div class="service-photo">
-          <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tables and chairs rental San Antonio" loading="lazy">
+          <img src="https://images.pexels.com/photos/29188023/pexels-photo-29188023.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tables and chairs rental San Antonio" loading="lazy">
         </div>
         <div class="service-body">
           <div class="service-icon">🪑</div>
-          <h3>Tables &amp; Chairs</h3>
-          <p>Complete your party setup with clean folding tables and chairs. Delivered and picked up with your other rentals.</p>
-          <div class="service-price">Call for pricing</div>
+          <h3>Tables &amp; Chairs Set</h3>
+          <p>6-foot table with 6 chairs per set. Delivered and picked up with your other rentals — bundle and save!</p>
+          <div class="service-price">$25 / set</div>
           <div class="service-badge">Bundle &amp; Save</div>
         </div>
       </div>
@@ -1168,16 +1225,85 @@
   </div>
 </section>
 
-<!-- ===== REVIEW CAPTURE ===== -->
-<section class="review-capture" aria-label="Leave a review">
-  <div class="container text-center">
-    <div class="tag" style="background:rgba(26,5,51,.1);color:var(--dark)">Share Your Experience</div>
-    <h2 style="margin-top:8px">Had a Great Party? Let San Antonio Families Know!</h2>
-    <p class="lead" style="max-width:540px;margin:0 auto">Your review helps other families find an honest, reliable bounce house rental company. Takes 30 seconds — means everything to a small family business.</p>
-    <div class="review-links">
-      <a href="https://www.google.com/search?q=Bouncers+R+Us+San+Antonio+TX" target="_blank" rel="noopener" class="btn btn-google">⭐ Review on Google</a>
-      <a href="https://www.facebook.com/people/Bouncers-R-Us/100042409966427/" target="_blank" rel="noopener" class="btn btn-facebook">👍 Review on Facebook</a>
-      <a href="https://www.yelp.com/biz/bouncers-r-us-san-antonio" target="_blank" rel="noopener" class="btn btn-yelp">🔍 Review on Yelp</a>
+<!-- ===== REVIEW INCENTIVE ===== -->
+<section class="review-incentive" id="review-reward" aria-label="Leave a review and earn 10% off">
+  <div class="container">
+    <div class="review-incentive-inner">
+
+      <div class="ri-left">
+        <div class="tag" style="background:rgba(255,222,89,.15);color:var(--yellow)">Earn Your Reward</div>
+        <h2 style="color:#fff;margin-top:10px">Leave a Review.<br><span style="color:var(--yellow)">Get 10% Off</span><br>Your Next Rental.</h2>
+        <p style="color:rgba(255,255,255,.68);font-size:.95rem;line-height:1.65;margin-top:14px;max-width:420px">Loved your party? Tell other San Antonio families about us — and we'll give you 10% off your next booking as a thank you. Just leave a review, upload proof, and we'll apply the discount automatically.</p>
+
+        <div class="ri-steps">
+          <div class="ri-step">
+            <div class="ri-num">1</div>
+            <div class="ri-step-text">
+              <h4>Leave a Review</h4>
+              <p>Write an honest review on Google, Facebook, or Yelp. Takes less than 60 seconds.</p>
+            </div>
+          </div>
+          <div class="ri-step">
+            <div class="ri-num">2</div>
+            <div class="ri-step-text">
+              <h4>Screenshot Your Review</h4>
+              <p>Take a screenshot or save a photo of your posted review confirmation.</p>
+            </div>
+          </div>
+          <div class="ri-step">
+            <div class="ri-num">3</div>
+            <div class="ri-step-text">
+              <h4>Upload &amp; Claim 10% Off</h4>
+              <p>Submit your proof here — we'll record your discount and apply it to your very next order.</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="color:rgba(255,255,255,.45);font-size:.8rem;margin-top:20px">Start by leaving your review on one of these platforms:</p>
+        <div class="ri-review-links">
+          <a href="https://www.google.com/search?q=Bouncers+R+Us+San+Antonio+TX" target="_blank" rel="noopener" class="ri-link">⭐ Google</a>
+          <a href="https://www.facebook.com/people/Bouncers-R-Us/100042409966427/" target="_blank" rel="noopener" class="ri-link">👍 Facebook</a>
+          <a href="https://www.yelp.com/biz/bouncers-r-us-san-antonio" target="_blank" rel="noopener" class="ri-link">🔍 Yelp</a>
+        </div>
+      </div>
+
+      <div class="ri-right">
+        <div class="ri-form-card">
+          <div style="font-size:2rem;margin-bottom:8px">🎁</div>
+          <h3>Upload Your Review Proof</h3>
+          <p class="ri-sub">We'll confirm your review and add 10% off to your account — no coupon code needed.</p>
+
+          <div id="ri-form-wrap">
+            <form class="ri-form" id="review-proof-form" novalidate>
+              <input type="text" id="ri-name" placeholder="Your Full Name *" required>
+              <input type="tel" id="ri-phone" placeholder="Phone Number * (for your discount)" required>
+              <select id="ri-platform" required>
+                <option value="">Where did you leave your review? *</option>
+                <option>Google</option>
+                <option>Facebook</option>
+                <option>Yelp</option>
+              </select>
+
+              <label class="ri-upload-label" for="ri-upload-input">
+                <div class="ri-upload-icon">📸</div>
+                <span id="ri-upload-text">Tap to upload your review screenshot<br><small style="color:var(--muted);font-weight:400">JPG, PNG, or PDF — max 10MB</small></span>
+              </label>
+              <input type="file" id="ri-upload-input" class="ri-upload-input" accept="image/*,.pdf">
+              <p class="ri-upload-filename" id="ri-filename"></p>
+
+              <button type="submit" class="ri-submit">Submit Proof &amp; Claim 10% Off →</button>
+              <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:8px">🔒 Your info is only used to apply your discount. We don't spam.</p>
+            </form>
+          </div>
+
+          <div class="ri-success" id="ri-success">
+            <div class="ri-success-icon">🎉</div>
+            <h4>Discount Claimed!</h4>
+            <p>We got your review proof! Your 10% discount has been recorded and will be applied automatically to your next booking. Thank you for helping other San Antonio families find us!</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1340,6 +1466,43 @@
     });
   });
 
+  /* ── ZIP CHECKER ── */
+  var SA_ZIPS = [
+    // San Antonio proper
+    '78201','78202','78203','78204','78205','78206','78207','78208','78209','78210',
+    '78211','78212','78213','78214','78215','78216','78217','78218','78219','78220',
+    '78221','78222','78223','78224','78225','78226','78227','78228','78229','78230',
+    '78231','78232','78233','78234','78235','78236','78237','78238','78239','78240',
+    '78241','78242','78243','78244','78245','78246','78247','78248','78249','78250',
+    '78251','78252','78253','78254','78255','78256','78257','78258','78259','78260',
+    '78261','78263','78264','78265','78266','78268','78269','78270','78278','78279',
+    '78280','78283','78284','78285','78288','78289','78291','78292','78293','78294',
+    '78295','78296','78297','78298','78299',
+    // Surrounding communities
+    '78101','78108','78109','78112','78121','78130','78132','78133','78148','78150',
+    '78152','78154','78155','78160','78161','78163','78023','78015','78070','78006'
+  ];
+  document.getElementById('bw-zip-check').addEventListener('click', function() {
+    var zip = document.getElementById('bw-zip').value.trim();
+    var result = document.getElementById('bw-zip-result');
+    if (!/^\d{5}$/.test(zip)) {
+      result.innerHTML = '<p style="color:#dc2626;font-size:.85rem;margin-top:10px;font-weight:600">Please enter a valid 5-digit ZIP code.</p>';
+      return;
+    }
+    if (SA_ZIPS.indexOf(zip) !== -1) {
+      result.innerHTML = '<div class="zip-eligible">✅ Great news — we deliver to <strong>' + zip + '</strong>! Fill out the form below to get your free quote.</div>';
+      setTimeout(function() {
+        document.getElementById('bw-zip-step').style.display = 'none';
+        document.getElementById('bw-fields').style.display = 'flex';
+      }, 1200);
+    } else {
+      result.innerHTML = '<div class="zip-not-eligible">Hmm, <strong>' + zip + '</strong> may be outside our usual range — but we may still be able to help! <a href="tel:2103812869">Call us at (210) 381-2869</a> to check.</div>';
+    }
+  });
+  document.getElementById('bw-zip').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') document.getElementById('bw-zip-check').click();
+  });
+
   /* ── HERO QUICK QUOTE ── */
   document.getElementById('bw-submit').addEventListener('click', function() {
     var name = document.getElementById('bw-name').value.trim();
@@ -1439,6 +1602,47 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  /* ── REVIEW PROOF FORM ── */
+  var riUpload = document.getElementById('ri-upload-input');
+  if (riUpload) {
+    riUpload.addEventListener('change', function() {
+      var fn = document.getElementById('ri-filename');
+      var uploadText = document.getElementById('ri-upload-text');
+      if (this.files && this.files[0]) {
+        if (fn) { fn.textContent = '✅ ' + this.files[0].name; fn.style.display = 'block'; }
+        if (uploadText) uploadText.textContent = 'File selected — ready to submit!';
+      }
+    });
+  }
+
+  var riForm = document.getElementById('review-proof-form');
+  if (riForm) {
+    riForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name     = document.getElementById('ri-name').value.trim();
+      var phone    = document.getElementById('ri-phone').value.trim();
+      var platform = document.getElementById('ri-platform').value;
+      var file     = document.getElementById('ri-upload-input').files[0];
+      var phonePattern = /^[\d\s\-()+]{7,}$/;
+      if (!name || !phone || !platform) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      if (!phonePattern.test(phone)) {
+        alert('Please enter a valid phone number.');
+        return;
+      }
+      if (!file) {
+        alert('Please upload a screenshot of your review.');
+        return;
+      }
+      var formWrap = document.getElementById('ri-form-wrap');
+      var success  = document.getElementById('ri-success');
+      if (formWrap) formWrap.style.display = 'none';
+      if (success)  success.style.display  = 'block';
+    });
+  }
 </script>
 </body>
 </html>
